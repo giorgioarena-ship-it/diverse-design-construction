@@ -1,0 +1,576 @@
+/*
+   Diverse Design Construction Inc. - main stylesheet
+
+   This is the EXTERNAL stylesheet. It has all the styles for the pages (colors, fonts, layout,
+   nav, footer, buttons, cards, forms). For specific styles, <style> blocks will be present in the respective HTML file.
+ */
+
+/* ---- Google Font import ---- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+/* ---- CSS custom properties / theme variables ---- */
+:root {
+  --brand: #6b4226;        /* cedar/wood brown */
+  --brand-dark: #4a2e1a;
+  --accent: #8a9b6e;       /* sage green accent */
+
+  --bg: #fbfaf7;
+  --bg-alt: #f1efe9;
+  --surface: #ffffff;
+  --text: #23231f;
+  --text-muted: #5a5a52;
+  --border: #e2e0d8;
+
+  --radius: 10px;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --font-head: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Dark theme overrides - toggled using [data-theme="dark"] on <html> */
+[data-theme="dark"] {
+  --bg: #171916;
+  --bg-alt: #1f2220;
+  --surface: #21241f;
+  --text: #f2f1ec;
+  --text-muted: #b9b7ae;
+  --border: #33362f;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* ---- Reset basics ---- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-head);
+  color: var(--text);
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul, ol {
+  padding-left: 1.25rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+section {
+  padding: 3.5rem 0;
+}
+
+.section-alt {
+  background-color: var(--bg-alt);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--brand);
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+/* -- Buttons -- */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+.btn:hover {
+  text-decoration: none;
+}
+.btn-primary {
+  background-color: var(--brand);
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: var(--brand-dark);
+}
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--brand);
+  color: var(--brand);
+}
+.btn-outline:hover {
+  background-color: var(--brand);
+  color: #fff;
+}
+.btn-small {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+/* -- Header / Navigation (used in components/header.html) -- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.9rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.logo {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.logo:hover {
+  text-decoration: none;
+}
+.logo-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand), var(--accent));
+  flex-shrink: 0;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  color: var(--text);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.main-nav a.active {
+  color: var(--brand);
+  font-weight: 600;
+}
+
+#theme-toggle {
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+#theme-toggle:hover {
+  background-color: var(--border);
+}
+
+/*   -- Footer (used in components/footer.html) --  */
+.site-footer {
+  background-color: var(--brand-dark);
+  color: #f1efe9;
+  margin-top: 4rem;
+}
+/* -- Diverse Design Construction Inc. footer inherits the brand-dark wood-brown background that is set above with the :root variables. -- */
+.site-footer a {
+  color: #f1efe9;
+}
+.footer-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.footer-col h4 {
+  color: #fff;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-col li {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: #d7d4c8;
+}
+.social-icons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.12);
+}
+.social-icons svg {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+}
+
+/* -- Hero section -- */
+.hero {
+  padding: 4.5rem 0;
+  background: linear-gradient(180deg, var(--bg-alt), var(--bg));
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+.hero p.lead {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 46ch;
+}
+.hero-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+.hero-visual {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--brand), var(--accent));
+  box-shadow: var(--shadow);
+}
+
+/*  -- Cards - shared grid pattern (services, products, team) -- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background-color: var(--bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.9rem;
+}
+.icon-badge svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--brand);
+  fill: none;
+  stroke-width: 1.8;
+}
+
+/* -- Product / case study cards -- */
+.product-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+.product-thumb {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 1rem;
+}
+.product-body {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  background-color: var(--bg-alt);
+  color: var(--text-muted);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.6rem;
+  width: fit-content;
+}
+.product-body p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  flex: 1;
+}
+
+/* -- Team cards (About page) -- */
+.team-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+
+/* -- Values list styling -- */
+.values-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.values-list li {
+  background-color: var(--surface);
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  padding: 1rem 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+/* -- Blog page -- */
+.post-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+.post-meta {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+.latest-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background-color: var(--accent);
+  color: #23231f;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.post-content {
+  margin-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+  display: none;
+}
+.post-content.open {
+  display: block;
+}
+.read-more-btn {
+  background: none;
+  border: none;
+  color: var(--brand);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+/* -- Filter controls --  */
+.filter-bar {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.filter-bar input[type="text"] {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+.no-results {
+  display: none;
+  text-align: center;
+  color: var(--text-muted);
+  padding: 2rem 0;
+}
+
+/*  -- Forms (Contact page) -- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+.form-group {
+  margin-bottom: 1.25rem;
+}
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  font-size: 0.92rem;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: 2px solid var(--brand);
+  outline-offset: 1px;
+}
+.form-group textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+.error-msg {
+  color: #c0392b;
+  font-size: 0.82rem;
+  margin-top: 0.3rem;
+  display: none;
+}
+.error-msg.visible {
+  display: block;
+}
+.form-group.invalid input,
+.form-group.invalid textarea {
+  border-color: #c0392b;
+}
+.success-box {
+  background-color: var(--bg-alt);
+  border: 1px solid var(--brand);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+}
+.success-box h3 {
+  color: var(--brand);
+}
+
+/* -- Responsive -- */
+@media (max-width: 720px) {
+  .hero-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-visual {
+    order: -1;
+  }
+  .nav-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .main-nav ul {
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Studies | Diverse Design Construction Inc.</title>
+  <meta name="description" content="Recent fence and deck building projects from Diverse Design Construction Inc.">
+
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- INTERNAL CSS: gradient backgrounds for each project thumbnail, unique to this page -->
+  <style>
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .thumb-1 { background: linear-gradient(135deg, #a15c38, #7c4326); }
+    .thumb-2 { background: linear-gradient(135deg, #5c7a48, #3d5630); }
+    .thumb-3 { background: linear-gradient(135deg, #6b7678, #4a5254); }
+    .thumb-4 { background: linear-gradient(135deg, #c99a56, #a1732f); }
+    .thumb-5 { background: linear-gradient(135deg, #6b4226, #4a2e1a); }
+    .thumb-6 { background: linear-gradient(135deg, #8a9b6e, #62704c); }
+    .thumb-1, .thumb-2, .thumb-3, .thumb-4, .thumb-5, .thumb-6 {
+      padding: 0;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Case studies</span>
+        <h1>Recent work</h1>
+        <p class="lead">A selection of fences and decks we've designed and built for real clients.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <!-- Part 5: live filter -->
+        <div class="filter-bar">
+          <input type="text" id="filter-input" placeholder="Search by name or category (e.g. &quot;fence&quot;)&hellip;" aria-label="Search case studies">
+        </div>
+
+        <div class="product-grid">
+
+          <div class="product-card">
+            <div class="product-thumb thumb-1">
+              <img src="assets/images/maple-street-deck.jpg" alt="A raised backyard wood deck with railing and stairs" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+            <div class="product-body">
+              <span class="tag">Deck</span>
+              <h3 class="card-title">Maple Street Backyard Deck</h3>
+              <p>A 320 sq. ft. pressure-treated pine deck with built-in bench seating and a stair landing for a sloped backyard.</p>
+              <a href="#" class="btn btn-outline btn-small">View Case Study</a>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-thumb thumb-2">
+              <img src="assets/images/riverside-fence.jpg" alt="A horizontal-slat wood privacy fence with a gate beside a house" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+            <div class="product-body">
+              <span class="tag">Fence</span>
+              <h3 class="card-title">Riverside Cedar Privacy Fence</h3>
+              <p>240 linear feet of 6-foot cedar privacy fencing with a walk gate and double drive gate for a corner lot.</p>
+              <a href="#" class="btn btn-outline btn-small">View Case Study</a>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-thumb thumb-3">
+              <img src="assets/images/rooftop-renovation.jpg" alt="A covered outdoor structure with a wood-fired pizza oven on a patio" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+            <div class="product-body">
+              <span class="tag">Repair</span>
+              <h3 class="card-title">Rooftop Deck Renovation</h3>
+              <p>Full board replacement and railing repair on a 15-year-old rooftop deck, plus a new waterproof membrane underneath.</p>
+              <a href="#" class="btn btn-outline btn-small">View Case Study</a>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-thumb thumb-4">
+              <img src="assets/images/farmstead-fence.jpg" alt="A tall wood board fence along a parking area" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+            <div class="product-body">
+              <span class="tag">Fence</span>
+              <h3 class="card-title">Split-Rail Farmstead Fence</h3>
+              <p>A half-mile of classic split-rail fencing along a rural property line, built to withstand harsh winters.</p>
+              <a href="#" class="btn btn-outline btn-small">View Case Study</a>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-thumb thumb-5">
+              <img src="assets/images/composite-deck-pergola.jpg" alt="A composite deck with a pergola, patio furniture, and umbrella" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+            <div class="product-body">
+              <span class="tag">Composite</span>
+              <h3 class="card-title">Composite Deck &amp; Pergola</h3>
+              <p>A low-maintenance composite deck paired with a custom cedar pergola for year-round outdoor entertaining.</p>
+              <a href="#" class="btn btn-outline btn-small">View Case Study</a>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-thumb thumb-6">
+              <img src="assets/images/corner-lot-fence-gate.jpg" alt="A wood board fence running alongside a sidewalk" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+            <div class="product-body">
+              <span class="tag">Fence</span>
+              <h3 class="card-title">Corner Lot Fence &amp; Gate</h3>
+              <p>A horizontal-slat modern fence with an automated driveway gate for a newly built home.</p>
+              <a href="#" class="btn btn-outline btn-small">View Case Study</a>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="no-results" id="no-results">No case studies match your search. Try a different name or category.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/theme.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/filter.js"></script>
+</body>
+</html>

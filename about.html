@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Diverse Design Construction Inc.</title>
+  <meta name="description" content="Learn about Diverse Design Construction Inc.'s background, mission, and team.">
+
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- INTERNAL CSS: page-specific overrides for the About page -->
+  <style>
+    .page-intro {
+      max-width: 65ch;
+    }
+    .team-avatar.a1 { background: linear-gradient(135deg, #6b4226, #8a5a34); }
+    .team-avatar.a2 { background: linear-gradient(135deg, #8a9b6e, #62704c); }
+    .team-avatar.a3 { background: linear-gradient(135deg, #6b7678, #4a5254); }
+    .mission-block {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="hero">
+      <div class="container page-intro">
+        <span class="eyebrow">About us</span>
+        <h1>A family-run crew built on repeat customers</h1>
+        <p class="lead">
+          Diverse Design Construction Inc. started in 2000 as a two-person
+          fencing crew and has grown into a small, dependable team that
+          still shows up to every job site in person.
+        </p>
+      </div>
+    </section>
+
+    <!-- BACKGROUND -->
+    <section>
+      <div class="container">
+        <span class="eyebrow">Our story</span>
+        <h2>Background</h2>
+        <p style="max-width: 70ch;">
+          We got our start building a single backyard fence for a neighbor,
+          and the referrals never really stopped. Today we work with
+          homeowners, property managers, and the occasional small farm who
+          want a fence or deck that's built right the first time &mdash;
+          without the runaround of a big-box contractor.
+        </p>
+
+        <div class="mission-block">
+          <h3>Our Mission</h3>
+          <p>
+            To build fences and decks that hold up to real weather and real
+            use, backed by clear pricing and a crew that actually answers
+            the phone when something needs a follow-up.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="section-alt">
+      <div class="container">
+        <span class="eyebrow">What we believe</span>
+        <h2>Our Values</h2>
+        <ul class="values-list">
+          <li>
+            <strong>Built to last, not just to look good on day one.</strong>
+            We use materials and fasteners rated for the job, not the cheapest option.
+          </li>
+          <li>
+            <strong>Straight pricing.</strong>
+            The quote we give you up front is the number you pay, barring changes you approve.
+          </li>
+          <li>
+            <strong>We clean up after ourselves.</strong>
+            Every job site gets cleared of scrap and debris before we call it done.
+          </li>
+          <li>
+            <strong>Honest timelines.</strong>
+            We'd rather tell you two weeks and deliver in ten days than the other way around.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section>
+      <div class="container">
+        <span class="eyebrow">Who we are</span>
+        <h2>The Team</h2>
+        <div class="card-grid">
+          <div class="card">
+            <div class="team-avatar a1">GA</div>
+            <h3>Giorgio Arena</h3>
+            <p><em>Owner &amp; Lead Builder</em></p>
+            <p>Runs every job personally and has been framing decks and setting fence posts for over 15 years.</p>
+          </div>
+          <div class="card">
+            <div class="team-avatar a2">DA</div>
+            <h3>Dan Arena</h3>
+            <p><em>Project Estimator</em></p>
+            <p>Handles site visits, measurements, and quotes. Usually the first person you'll talk to about a new project.</p>
+          </div>
+          <div class="card">
+            <div class="team-avatar a3">VA</div>
+            <h3>Vince Arena</h3>
+            <p><em>Site Foreman</em></p>
+            <p>Keeps builds on schedule and manages the crew day-to-day once a project starts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS - ordered list example -->
+    <section class="section-alt">
+      <div class="container">
+        <span class="eyebrow">How we work</span>
+        <h2>Our Process</h2>
+        <ol style="max-width: 60ch;">
+          <li><strong>Free site estimate</strong> &mdash; we measure your yard and talk through what you want.</li>
+          <li><strong>Written quote</strong> &mdash; a clear, itemized estimate you can review before committing.</li>
+          <li><strong>Material selection</strong> &mdash; pick your wood, composite, or fence style and finish.</li>
+          <li><strong>Build</strong> &mdash; our crew completes the project on the agreed schedule.</li>
+          <li><strong>Walk-through</strong> &mdash; we inspect the finished work with you before leaving.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/theme.js"></script>
+  <script src="js/components.js"></script>
+</body>
+</html>

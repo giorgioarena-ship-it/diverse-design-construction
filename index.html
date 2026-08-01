@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diverse Design Construction Inc. | Custom Fences &amp; Decks</title>
+  <meta name="description" content="Diverse Design Construction Inc. builds custom fences and decks for homeowners who want quality that lasts.">
+
+  <!-- Applies the saved theme (light/dark) before the rest of the
+       page renders, so there's no wrong theme on load. -->
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- INTERNAL CSS: styles specific to just this page and the stats strip. -->
+  <style>
+    .stats-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .stats-strip .stat {
+      min-width: 140px;
+    }
+    .stats-strip .stat strong {
+      display: block;
+      font-family: var(--font-head);
+      font-size: 2rem;
+      color: var(--brand);
+    }
+    .stats-strip .stat span {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    .cta-banner {
+      background-color: var(--brand);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      text-align: center;
+    }
+    .cta-banner h2 { color: #fff; }
+    .cta-banner .btn-outline {
+      border-color: #fff;
+      color: #fff;
+    }
+    .cta-banner .btn-outline:hover {
+      background-color: #fff;
+      color: var(--brand-dark);
+    }
+    .hero-visual {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Fence &amp; deck builders</span>
+          <h1>Custom fences and decks built to outlast the warranty.</h1>
+          <!-- Inline style used here on purpose for a one-off emphasis color that
+               doesn't need its own CSS class anywhere else on the site. -->
+          <p class="lead">
+            Diverse Design Construction Inc. designs and builds
+            <span style="color: var(--brand); font-weight: 600;">solid, good-looking, low-hassle</span>
+            fences and decks for homeowners across the region.
+          </p>
+          <div class="hero-actions">
+            <a href="products.html" class="btn btn-primary">View Our Work</a>
+            <a href="contact.html" class="btn btn-outline">Get A Free Quote</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <img src="assets/images/hero-fence.jpg" alt="A wooden fence with hanging flower baskets along a backyard patio" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT WE DO -->
+    <section>
+      <div class="container">
+        <span class="eyebrow">What we do</span>
+        <h2>A small crew, a full-service process</h2>
+        <p style="max-width: 60ch; color: var(--text-muted);">
+          We handle everything from the first measurement to the final
+          walk-through, so you don't need to coordinate three different
+          contractors to get a fence or deck you're actually happy with.
+        </p>
+
+        <div class="card-grid">
+          <div class="card">
+            <div class="icon-badge">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line></svg>
+            </div>
+            <h3>Design</h3>
+            <p>On-site measurements and a simple layout plan built around your yard, your budget, and how you'll actually use the space.</p>
+          </div>
+          <div class="card">
+            <div class="icon-badge">
+              <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <h3>Build</h3>
+            <p>Licensed, insured crews using pressure-treated lumber, cedar, or composite materials, built to local code.</p>
+          </div>
+          <div class="card">
+            <div class="icon-badge">
+              <svg viewBox="0 0 24 24"><path d="M3 3v18h18"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>
+            </div>
+            <h3>Maintain</h3>
+            <p>Staining, sealing, and repair services so your fence or deck keeps looking good for years after we hand it off.</p>
+          </div>
+        </div>
+
+        <!-- Homepage-only stats strip, styled with the internal <style> block above -->
+        <div class="stats-strip">
+          <div class="stat"><strong>180+</strong><span>Projects completed</span></div>
+          <div class="stat"><strong>26</strong><span>Years in business</span></div>
+          <div class="stat"><strong>1-3 wk</strong><span>Average build time</span></div>
+          <div class="stat"><strong>4.9/5</strong><span>Average client rating</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-alt">
+      <div class="container">
+        <div class="cta-banner">
+          <h2>Ready to plan your fence or deck?</h2>
+          <p>Tell us a bit about your project and we'll get back to you within one business day with a free estimate.</p>
+          <a href="contact.html" class="btn btn-outline">Request A Quote</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- theme.js must load before components.js so window.setupThemeToggle exists
+       by the time the header gets injected. -->
+  <script src="js/theme.js"></script>
+  <script src="js/components.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Diverse Design Construction Inc.</title>
+  <meta name="description" content="Notes on how we built this site and tips for planning a fence or deck project.">
+
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- INTERNAL CSS for the blog page -->
+  <style>
+    #blog-list {
+      max-width: 760px;
+      margin: 2rem auto 0;
+    }
+    .filter-bar {
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="hero">
+      <div class="container" style="text-align:center;">
+        <span class="eyebrow">From the crew</span>
+        <h1>Blog</h1>
+        <p class="lead" style="margin: 0 auto;">Behind-the-scenes info on how this website was built, plus the occasional tip for planning a fence or deck project.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <!-- Part 5: live filter (reuses the same #filter-input / #no-results pattern as products.html) -->
+        <div class="filter-bar">
+          <input type="text" id="filter-input" placeholder="Search posts by title or category&hellip;" aria-label="Search blog posts">
+        </div>
+
+        <!-- Part 3: posts are injected here by js/blog.js -->
+        <div id="blog-list"></div>
+
+        <p class="no-results" id="no-results" style="max-width:760px; margin: 0 auto;">No posts match your search. Try a different keyword.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/theme.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/blog.js"></script>
+  <script src="js/filter.js"></script>
+</body>
+</html>
