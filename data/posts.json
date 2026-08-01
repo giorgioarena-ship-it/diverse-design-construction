@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "Why We Rebuilt Our Homepage Around One Clear Message",
+    "date": "2026-06-23",
+    "category": "Studio News",
+    "summary": "The old homepage tried to say too much at once. Here's how we simplified it for a clear message.",
+    "content": "The first version of the homepage had four different headlines on it. After feedback from clients, we realized that the page was too crowded, so I redid the hero section with one simple sentence and moved everything else lower."
+  },
+  {
+    "id": 2,
+    "title": "Building a Theme Switcher That Actually Remembers Your Choice",
+    "date": "2026-07-09",
+    "category": "Dev Log",
+    "summary": "How to make a light/dark toggle button last through a page reload.",
+    "content": "Making the toggle button was easy. The difficult part was to make sure the theme would still stay active after a page refresh.  The first time around I just programmed it to reset back to light mode every time a nav link was clicked. To fix this I had to save the theme to localStorage and then read it back out at the top every time a page loads.  The header and footer are loaded dynamically with fetch(), so the toggle button had to get 're-wired' every time the header goes into the page. This problem made me realize that a state that needs to survive a reload can't be in a JS variable."
+  },
+  {
+    "id": 3,
+    "title": "Turning The Blog Into Something Dynamic",
+    "date": "2026-07-10",
+    "category": "Dev Log",
+    "summary": "Moving the blog posts out of HTML and into a JSON file made updates easy.",
+    "content": "The first time around, every blog post was its own block of HTML, so to add new posts I had to copy and paste the card. This was fixed by adding the posts to a json file so that I could just add an object to the json file. To sort the posts by newest first,  I sorted the array by date and added a 'latest post' to the one that shows up first. The hard part about this was the timing of everything, the posts don't actually exist in the page until the fetch is done so things that rely on them like the search filter for example has to wait instead of just running right away when the page loads. "
+  },
+  {
+    "id": 4,
+    "title": "Catching Bad Form Input Before It Ever Gets 'Submitted'",
+    "date": "2026-07-10",
+    "category": "Dev Log",
+    "summary": "Client-side validation on the contact form, with inline errors that remove themselves as you fix them.",
+    "content": "Three pieces of info had to be checked: name can't be empty, valid email address, and a message has to contain at least 20 characters. I blocked the submission by using preventDefault(), so nothing is submitted before all of those conditions are met, for this I used a method showError() / clearError(), which puts a small red error message below each field which is not valid, and  it adds a specific class to the input element to change its border colour to red. The hardest part here was making sure that error messages are visible automatically when a user starts fixing the problem, rather than on another submission, for that, I added an 'input' event listener to each field. After successful validation, the form shows a short success message. There's no server side for this project, so nothing is being sent to the server, if there was, all the validation logic would be exactly the same communicating to a backend."
+
+  },
+  {
+    "id": 5,
+    "title": "Adding Live Search to the Case Studies Page",
+    "date": "2026-07-16",
+    "category": "Dev Log",
+    "summary": "A single search box that filters project cards instantly by title or category, no reload necessary.",
+    "content": "There are six project cards on the case studies page, and once I pictured a visitor looking for a particular kind of project, like a customizable deck for example, scrolling through all of them was not the best option. I added an input field above the grid and created an 'input' event listener that checks each card whenever you type anything. Every card is checked for a match in its title and category tag (both lowered to lower case letters so the search would be case-insensitive), and if nothing matches it gets display:none class instead of getting deleted from the DOM. The same function is applied to the blog page where the user can use the input field to look for particular blog posts by title and category tags. The only difference is that cards do not exist initially on the page load, so the filter gets set up only when the blog posts are completely loaded. When there is no match at all, the 'No results found' message appears."
+  },
+  {
+    "id": 6,
+    "title": "Five Questions to Ask Before You Build a Fence or Deck",
+    "date": "2026-07-23",
+    "category": "Tips",
+    "summary": "Before quoting a  single project, Homeowners are asked these five questions.",
+    "content": "Completing many jobs, the same five questions are always asked before sending the first quotation: Have you got a survey of your property to know exactly where the property line is?,  is the job big enough to where a permit is needed to start?, what material is the project being built with; pressure treated wood, cedar, composite/pvc?, Does the ground need grading?, and what is the customer's budget?. It makes things easier to sort everything out right at the very beginning, and this can ensure a smooth job instead of negotiations."
+  }
+]
